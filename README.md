@@ -1,3 +1,61 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://setditsx.com.mx/wp-content/uploads/2023/09/1.png" width="400" alt="Laravel Logo"></a></p>
+
+
+
+
+## INSTALAR PRIMERO DOCKER DESKTOP, WSL(UBUNTU) Y PHP STORM DE AHI SEGUIR LOS SIGUIENTES PASOS:
+
+
+ 1. Clonar el Repositorio
+El desarrollador debe clonar tu proyecto API en su entorno WSL.
+
+- Navegar a la ubicación deseada en WSL (ej., /home/su_usuario/Code/).
+- git clone https://github.com/MizarChiquito/SACA-SETDITSX-API.git
+- cd SACA-SETDITSX-API
+
+ 2. Configurar el Entorno Docker (Laravel Sail) 
+Dado que no subiste archivos grandes o sensibles, ahora deben instalar y levantar el entorno.
+
+Copiar el archivo .env: El archivo .env contiene claves de seguridad y credenciales de base de datos que no se subieron a Git. El desarrollador debe copiar la plantilla:
+
+COMANDOS WSL:
+cp .env.example .env
+
+Instalar Dependencias y Levantar Contenedores: Este comando es mágico. Sail automáticamente instalará las dependencias de PHP y levantará los servicios (PHP, Nginx, MySQL, etc.) definidos en docker-compose.yml.
+
+COMANDOS WSL:
+./vendor/bin/sail up -d
+
+Deberia quedar un contenedor en Docker:
+<img width="1914" height="1015" alt="image" src="https://github.com/user-attachments/assets/590eeb1c-8c96-4275-9b59-156669f160c7" />
+
+
+
+
+Instalar Clave de Aplicación y Migraciones: Una vez que los contenedores estén corriendo, deben generar la clave de la aplicación y crear la base de datos (si no lo hace el paso anterior):
+
+COMANDOS WSL:
+./vendor/bin/sail artisan key:generate
+./vendor/bin/sail artisan migrate
+
+
+
+
+
+OJO al hacer commits y pushes jamas seleccionen los archivos sensibles como el .env
+
+<img width="605" height="68" alt="image" src="https://github.com/user-attachments/assets/98b91908-6aff-4a57-83d9-283af78328b7" />
+
+Ahi es donde esta la API key y otros datos sensibles
+
+## NOTA: SOLO SELECCIONEN PARA EL COMMIT LOS ARCHIVOS QUE MODIFICARON QUE NO SEAN LOS QUE INICIAN CON "."
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -6,6 +64,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
 
 ## About Laravel
 
