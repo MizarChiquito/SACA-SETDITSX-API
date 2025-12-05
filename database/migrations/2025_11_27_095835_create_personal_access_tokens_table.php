@@ -9,6 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+
+    //Anduve viendo y creo esta al menos a lo que entregaremos ahorita,esta demás ya que es para apps dedicadas(no web)
+    //Las web usan cookies y asi
     public function up(): void
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {

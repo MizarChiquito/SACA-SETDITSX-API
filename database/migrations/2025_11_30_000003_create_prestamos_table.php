@@ -13,11 +13,11 @@ return new class extends Migration
 
             // FK: Ahorrador que solicita
             $table->unsignedBigInteger('id_ahorrador_solicita');
-            $table->foreign('id_ahorrador_solicita')->references('id_usuario')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_ahorrador_solicita')->references('id')->on('users')->onDelete('cascade');
 
             // FK: Administrador que aprueba (puede ser NULL)
             $table->unsignedBigInteger('id_administrador_aprueba')->nullable();
-            $table->foreign('id_administrador_aprueba')->references('id_usuario')->on('usuarios')->onDelete('set null');
+            $table->foreign('id_administrador_aprueba')->references('id')->on('users')->onDelete('set null');
 
             $table->decimal('monto_solicitado', 10, 2);
             $table->decimal('monto_aprobado', 10, 2)->nullable();
