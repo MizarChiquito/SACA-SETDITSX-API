@@ -13,7 +13,7 @@ return new class extends Migration
 
             // Clave Foránea a USUARIOS (id_ahorrador)
             $table->unsignedBigInteger('id_ahorrador');
-            $table->foreign('id_ahorrador')->references('id_usuario')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_ahorrador')->references('id')->on('users')->onDelete('cascade');
 
             $table->decimal('monto_actual', 10, 2)->default(0.00);
             $table->decimal('saldo_actual', 10, 2)->default(0.00);
